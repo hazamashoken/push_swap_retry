@@ -6,7 +6,7 @@
 #    By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 15:41:04 by tliangso          #+#    #+#              #
-#    Updated: 2022/10/05 16:00:42 by tliangso         ###   ########.fr        #
+#    Updated: 2022/10/05 16:01:45 by tliangso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,4 +127,4 @@ help:
 	@echo "$(RED)| $(YELLOW)make help        $(RED)|$(NOC)"
 	@echo "$(RED)==================$(NOC)"
 
-.PHONY:		all	clean	fclean	re bonus norm gitpush tester
+.PHONY:		all	clean	fclean	re bonus norm gitpush tester help
