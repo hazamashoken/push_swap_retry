@@ -6,7 +6,7 @@
 #    By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 15:41:04 by tliangso          #+#    #+#              #
-#    Updated: 2022/10/05 16:08:29 by tliangso         ###   ########.fr        #
+#    Updated: 2022/10/05 16:16:31 by tliangso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -124,7 +124,7 @@ help:
 	@echo "$(RED)| $(YELLOW)make clean     $(RED)|$(NOC)"
 	@echo "$(RED)| $(YELLOW)make fclean    $(RED)|$(NOC)"
 	@echo "$(RED)| $(YELLOW)make re        $(RED)|$(NOC)"
-	@echo "$(RED)| $(YELLOW)make help        $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make help      $(RED)|$(NOC)"
 	@echo "$(RED)==================$(NOC)"
 
 .PHONY:		all	clean	fclean	re bonus norm gitpush tester help
