@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 22:39:14 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 14:43:24 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 16:13:42 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void	insertion_sort(t_list **a, t_list **b, int chunk_count)
 
 	i = 1;
 	last_chunk = 0;
-	last_chunk = last_chunk;
 	chunk = ft_lstsize(*a) / chunk_count;
 	last_chunk = chunk + ft_lstsize(*a) - (chunk * chunk_count);
 	while (i <= chunk_count - 1)
