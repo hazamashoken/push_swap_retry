@@ -6,13 +6,13 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:32:08 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 01:30:52 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:32:31 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"push_swap.h"
 
-void	args_to_stack(t_list **stack, int argc, char **argv)
+static void	args_to_stack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
 	char	**args;
@@ -37,15 +37,15 @@ void	args_to_stack(t_list **stack, int argc, char **argv)
 		free_split(args);
 }
 
-void	sort_the_fucking_stack(t_list **a, t_list **b)
+static void	sort_the_fucking_stack(t_list **a, t_list **b)
 {
 	int	size;
 
 	size = ft_lstsize(*a);
 	if (size <= 5)
 		sort_ha_and_below(a, b);
-	else if (size <= 400)
-		insertion_sort(a, b, 5);
+	else if (size <= 1400)
+		sort_big(a, b);
 	else
 		the_god_damn_radix_sort(a, b);
 }

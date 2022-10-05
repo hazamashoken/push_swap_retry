@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:41:18 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/04 12:48:50 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:43:15 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,20 @@ static int	push(t_list **to, t_list **from)
 	return (0);
 }
 
-int	pa(t_list **a, t_list **b)
+int	pa(t_list **a, t_list **b, int i)
 {
 	if (push(a, b) == -1)
 		return (-1);
-	ft_putstr_fd("pa\n", 1);
+	if (i == 1)
+		ft_putstr_fd("pa\n", 1);
 	return (0);
 }
 
-int	pb(t_list **a, t_list **b)
+int	pb(t_list **a, t_list **b, int i)
 {
 	if (push(b, a) == -1)
 		return (-1);
-	ft_putstr_fd("pb\n", 1);
+	if (i == 1)
+		ft_putstr_fd("pb\n", 1);
 	return (0);
 }

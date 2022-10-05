@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:40:29 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/04 12:48:06 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:50:01 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,31 @@ static int	reverse_rotate(t_list **stack)
 	return (0);
 }
 
-int	rra(t_list **a)
+int	rra(t_list **a, int i)
 {
 	if (reverse_rotate(a) == -1)
 		return (-1);
-	ft_putstr_fd("rra\n", 1);
+	if (i == 1)
+		ft_putstr_fd("rra\n", 1);
 	return (0);
 }
 
-int	rrb(t_list **b)
+int	rrb(t_list **b, int i)
 {
 	if (reverse_rotate(b) == -1)
 		return (-1);
-	ft_putstr_fd("rrb\n", 1);
+	if (i == 1)
+		ft_putstr_fd("rrb\n", 1);
 	return (0);
 }
 
-int	rrr(t_list **a, t_list **b)
+int	rrr(t_list **a, t_list **b, int i)
 {
 	if ((ft_lstsize(*a) < 2) || (ft_lstsize(*b) < 2))
 		return (-1);
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_putstr_fd("rrr\n", 1);
+	if (i == 1)
+		ft_putstr_fd("rrr\n", 1);
 	return (0);
 }

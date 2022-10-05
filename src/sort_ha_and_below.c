@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:49:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/04 15:14:33 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:45:37 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ void	sort_sam(t_list **a)
 	else if (head->index == next_min)
 	{
 		if (head->next->index == min)
-			sa(a);
+			sa(a, 1);
 		else
-			rra(a);
+			rra(a, 1);
 	}
 	else
 	{
 		if (head->next->index == min)
-			ra(a);
+			ra(a, 1);
 		else
 			sa_rra(a);
 	}
@@ -65,19 +65,19 @@ static void	sort_see(t_list **a, t_list **b)
 		return ;
 	distance = get_distance(a, get_min(a, -1));
 	if (distance == 1)
-		ra(a);
+		ra(a, 1);
 	else if (distance == 2)
 	{
-		ra(a);
-		ra(a);
+		ra(a, 1);
+		ra(a, 1);
 	}
 	else if (distance == 3)
-		rra(a);
+		rra(a, 1);
 	if (is_sorted(a))
 		return ;
-	pb(a, b);
+	pb(a, b, 1);
 	sort_sam(a);
-	pa(a, b);
+	pa(a, b, 1);
 }
 
 void	sort_ha(t_list **a, t_list **b)
@@ -86,24 +86,24 @@ void	sort_ha(t_list **a, t_list **b)
 
 	distance = get_distance(a, get_min(a, -1));
 	if (distance == 1)
-		ra(a);
+		ra(a, 1);
 	else if (distance == 2)
 	{
-		ra(a);
-		ra(a);
+		ra(a, 1);
+		ra(a, 1);
 	}
 	else if (distance == 3)
 	{
-		rra(a);
-		rra(a);
+		rra(a, 1);
+		rra(a, 1);
 	}
 	else if (distance == 4)
-		rra(a);
+		rra(a, 1);
 	if (is_sorted(a))
 		return ;
-	pb(a, b);
+	pb(a, b, 1);
 	sort_see(a, b);
-	pa(a, b);
+	pa(a, b, 1);
 }
 
 void	sort_ha_and_below(t_list **a, t_list **b)
@@ -114,7 +114,7 @@ void	sort_ha_and_below(t_list **a, t_list **b)
 	if (is_sorted(a) || size == 0 || size == 1)
 		return ;
 	if (size == 2)
-		sa(a);
+		sa(a, 1);
 	else if (size == 3)
 		sort_sam(a);
 	else if (size == 4)

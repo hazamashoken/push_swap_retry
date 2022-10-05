@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 22:39:14 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 02:44:16 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:43:24 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ static void	move_to_a(t_list **a, t_list **b)
 		if (hold_first <= hold_second)
 		{
 			while (hold_first-- > 0)
-				rb(b);
-			pa(a, b);
+				rb(b, 1);
+			pa(a, b, 1);
 		}
 		else
 		{
 			while (hold_second-- > 0)
-				rrb(b);
-			pa(a, b);
+				rrb(b, 1);
+			pa(a, b, 1);
 		}
 	}
 }

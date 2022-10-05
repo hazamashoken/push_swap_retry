@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 01:28:32 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 01:30:03 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:42:20 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ void	move_to_b(t_list **a, t_list **b, int chunk, int limit)
 		if (hold_first <= hold_second)
 		{
 			while (hold_first-- > 0)
-				ra(a);
-			pb(a, b);
+				ra(a, 1);
+			pb(a, b, 1);
 		}
 		else
 		{
 			while (hold_second-- >= 0)
-				rra(a);
-			pb(a, b);
+				rra(a, 1);
+			pb(a, b, 1);
 		}
 		i++;
 	}

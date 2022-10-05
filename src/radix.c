@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 12:19:47 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/04 16:21:46 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:45:46 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ void	the_god_damn_radix_sort(t_list **a, t_list **b)
 		{
 			head_a = *a;
 			if (((head_a->index >> i) & 1) == 1)
-				ra(a);
+				ra(a, 1);
 			else
-				pb(a, b);
+				pb(a, b, 1);
 		}
 		while (ft_lstsize(*b) != 0)
-			pa(a, b);
+			pa(a, b, 1);
 		i++;
 	}
 }

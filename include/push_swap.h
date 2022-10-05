@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:32:27 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 01:29:49 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:09:50 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 #  endif
 # endif
 
-# define STACK_COUNT 3
+# define STACK_COUNT 12
 
 typedef struct s_list
 {
@@ -67,23 +67,23 @@ void	index_stack(t_list **stack);
 
 //the only dumb methods we are allow to use
 //push.c
-int		pa(t_list **a, t_list **b);
-int		pb(t_list **a, t_list **b);
+int		pa(t_list **a, t_list **b, int i);
+int		pb(t_list **a, t_list **b, int i);
 
 //rotate.c
-int		ra(t_list **a);
-int		rb(t_list **b);
-int		rr(t_list **a, t_list **b);
+int		ra(t_list **a, int i);
+int		rb(t_list **b, int i);
+int		rr(t_list **a, t_list **b, int i);
 
 //reverse_rotate.c
-int		rra(t_list **a);
-int		rrb(t_list **b);
-int		rrr(t_list **a, t_list **b);
+int		rra(t_list **a, int i);
+int		rrb(t_list **b, int i);
+int		rrr(t_list **a, t_list **b, int i);
 
 //swap.c
-int		sa(t_list **a);
-int		sb(t_list **b);
-int		ss(t_list **a, t_list **b);
+int		sa(t_list **a, int i);
+int		sb(t_list **b, int i);
+int		ss(t_list **a, t_list **b, int i);
 
 //my_func_too_long.c
 void	ra_sa_rra(t_list **stack);
@@ -92,6 +92,7 @@ void	sa_rra(t_list **stack);
 //sort_ha_and_below.c
 void	sort_ha_and_below(t_list **a, t_list **b);
 void	sort_sam(t_list **a);
+void	sort_ha(t_list **a, t_list **b);
 
 //radix.c
 void	the_god_damn_radix_sort(t_list **stack_a, t_list **stack_b);
@@ -105,6 +106,9 @@ void	the_god_damn_radix_sort(t_list **stack_a, t_list **stack_b);
 //insertion_sort.c
 void	move_to_b(t_list **a, t_list **b, int chunk, int limit);
 void	insertion_sort(t_list **a, t_list **b, int chunk_count);
+
+//sort_big.c
+void	sort_big(t_list **a, t_list **b);
 
 void	ft_lstprint(t_list	*lst);
 #endif
