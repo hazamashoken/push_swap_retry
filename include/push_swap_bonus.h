@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:30:56 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 14:23:01 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:46:54 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@
 #   define SIZE_MAX                (4294967295U)
 #  endif
 # endif
-
-//check_args_bonus.c
-void	check_args_bonus(int argc, char **argv);
 
 //utils.c
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

@@ -6,7 +6,7 @@
 #    By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 15:41:04 by tliangso          #+#    #+#              #
-#    Updated: 2022/10/05 15:36:18 by tliangso         ###   ########.fr        #
+#    Updated: 2022/10/05 15:47:07 by tliangso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRC		=	push_swap.c radix.c \
 			my_func_too_long.c insertion_sort.c insertion_utils.c \
 			youtube_sort.c
 
-BONUS	=	checker.c check_args_bonus.c utils_bonus.c \
+BONUS	=	checker.c utils_bonus.c \
 
 
 SHARE	=	swap.c rotate.c reverse_rotate.c push.c utils.c error.c index.c check_args.c

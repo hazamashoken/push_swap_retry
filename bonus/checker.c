@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:18:12 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 15:01:45 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:46:10 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	exec_cmd(t_list **a, t_list **b, char *cmd)
 	else if (!ft_strncmp(cmd, "rrr\n", 5))
 		rrr(a, b, 0);
 	else
-		error_free_exit("Error\n", a, b);
+		error_free_exit("Error, unknown command detected\n", a, b);
 }
 
 void	push_swap(t_list **a, t_list **b)
@@ -91,7 +91,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
-	check_args_bonus(argc, argv);
+	check_args(argc, argv);
 	a = (t_list **)malloc(sizeof(t_list));
 	b = (t_list **)malloc(sizeof(t_list));
 	*a = NULL;
