@@ -6,26 +6,26 @@
 #    By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 15:41:04 by tliangso          #+#    #+#              #
-#    Updated: 2022/10/05 15:47:07 by tliangso         ###   ########.fr        #
+#    Updated: 2022/10/05 16:00:42 by tliangso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ### EXECUTABLE ###
-NAME	= push_swap
+NAME		= push_swap
 BONUS_NAME	= checker
 
 ### DIR ###
-DIRSRC	=	src/
-BONUS_SRC =	bonus/
-HEAD	= include/
-LIBFT_SRC = libft/
-SHARE_SRC = share/
+DIRSRC		= src/
+BONUS_SRC	= bonus/
+HEAD		= include/
+LIBFT_SRC	= libft/
+SHARE_SRC	= share/
 
 ### TESTER GIT URL ###
-TESTER1 = git@github.com:laisarena/push_swap_tester.git
-TESTER2 = https://github.com/LeoFu9487/push_swap_tester.git
-TESTER3 = git@github.com:louisabricot/push_swap_tester.git
-TESTER4 = git@github.com:ael-bekk/push_swap_tester.git
+TESTER1		= git@github.com:laisarena/push_swap_tester.git
+TESTER2		= https://github.com/LeoFu9487/push_swap_tester.git
+TESTER3		= git@github.com:louisabricot/push_swap_tester.git
+TESTER4		= git@github.com:ael-bekk/push_swap_tester.git
 
 ### SOURCE FILE ###
 SRC		=	push_swap.c radix.c \
@@ -42,18 +42,18 @@ LIBFT	=	ft_atoi.c lst_utils.c ft_strlen.c ft_split.c ft_isdigit.c \
 			ft_putstr_fd.c get_next_line.c get_next_line_utils.c
 
 ### PATH ###
-SRCS	= ${addprefix ${DIRSRC}, ${SRC}}
-BONUS_SRCS = ${addprefix ${BONUS_SRC}, ${BONUS}}
-EXTRA_SRCS = ${addprefix ${DIRSRC}, ${EXTRA}}
-LIBFT_SRCS = ${addprefix ${LIBFT_SRC}, ${LIBFT}}
-SHARE_SRCS = ${addprefix ${SHARE_SRC}, ${SHARE}}
+SRCS		= ${addprefix ${DIRSRC}, ${SRC}}
+BONUS_SRCS	= ${addprefix ${BONUS_SRC}, ${BONUS}}
+EXTRA_SRCS	= ${addprefix ${DIRSRC}, ${EXTRA}}
+LIBFT_SRCS	= ${addprefix ${LIBFT_SRC}, ${LIBFT}}
+SHARE_SRCS	= ${addprefix ${SHARE_SRC}, ${SHARE}}
 
 ### OBJECT FILE ###
-OBJS	= ${SRCS:.c=.o}
-BONUS_OBJS = ${BONUS_SRCS:.c=.o}
-EXRTA_OBJS = ${EXTRA_SRCS:.c=.o}
-LIBFT_OBJS = ${LIBFT_SRCS:.c=.o}
-SHARE_OBJS = ${SHARE_SRCS:.c=.o}
+OBJS		= ${SRCS:.c=.o}
+BONUS_OBJS	= ${BONUS_SRCS:.c=.o}
+EXRTA_OBJS	= ${EXTRA_SRCS:.c=.o}
+LIBFT_OBJS	= ${LIBFT_SRCS:.c=.o}
+SHARE_OBJS	= ${SHARE_SRCS:.c=.o}
 
 ### COMPILATION ###
 CC		= gcc
@@ -112,5 +112,19 @@ gitpush:
 	git status
 	git commit -m ${NAME}
 	git push
+
+help:
+	@clear
+	@echo "$(GREEN)Avaibles options:$(NOC)"
+	@echo "$(RED)==================$(NOC)"
+	@echo "$(RED)| $(YELLOW)make ${NAME} $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make bonus     $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make norm      $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make tester    $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make clean     $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make fclean    $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make re        $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make help        $(RED)|$(NOC)"
+	@echo "$(RED)==================$(NOC)"
 
 .PHONY:		all	clean	fclean	re bonus norm gitpush tester
