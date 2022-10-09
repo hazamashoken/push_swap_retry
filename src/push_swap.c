@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:32:08 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/05 15:32:31 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/09 21:12:57 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	args_to_stack(t_list **stack, int argc, char **argv)
 	else
 	{
 		i = 1;
-		args = argv;
+		args = split_argv(argv);
 	}
 	while (*(args + i))
 	{
@@ -60,6 +60,8 @@ int	main(int argc, char **argv)
 	check_args(argc, argv);
 	a = (t_list **)malloc(sizeof(t_list));
 	b = (t_list **)malloc(sizeof(t_list));
+	if (a == NULL && b == NULL)
+		return (1);
 	*a = NULL;
 	*b = NULL;
 	args_to_stack(a, argc, argv);

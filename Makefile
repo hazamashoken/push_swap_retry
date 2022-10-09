@@ -6,7 +6,7 @@
 #    By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 15:41:04 by tliangso          #+#    #+#              #
-#    Updated: 2022/10/05 16:16:31 by tliangso         ###   ########.fr        #
+#    Updated: 2022/10/09 21:06:11 by tliangso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ BONUS	=	checker.c utils_bonus.c \
 
 SHARE	=	swap.c rotate.c reverse_rotate.c push.c utils.c error.c index.c check_args.c
 
-LIBFT	=	ft_atoi.c lst_utils.c ft_strlen.c ft_split.c ft_isdigit.c \
-			ft_putstr_fd.c get_next_line.c get_next_line_utils.c
+LIBFT	=	ft_atoi.c lst_utils.c ft_strlen.c ft_split.c ft_isdigit.c ft_strjoin.c\
+			ft_putstr_fd.c get_next_line.c get_next_line_utils.c ft_strtrim.c
 
 ### PATH ###
 SRCS		= ${addprefix ${DIRSRC}, ${SRC}}
@@ -58,7 +58,7 @@ SHARE_OBJS	= ${SHARE_SRCS:.c=.o}
 ### COMPILATION ###
 CC		= gcc
 RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 
 ### COLORS ###
 NOC		= \033[0m
@@ -73,14 +73,16 @@ WHITE	= \033[1;37m
 	@${CC} ${CFLAGS} -c -I ${HEAD} $< -o ${<:.c=.o}
 	@echo "$(BLUE)clang $(WHITE)$(notdir $@)$(NOC)"
 
-all: ${NAME} bonus
+all: ${NAME} ${BONUS_NAME}
+
+bonus: ${BONUS_NAME}
 
 ${NAME}:	${OBJS} ${LIBFT_OBJS} ${SHARE_OBJS}
 
 	@${CC} ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT_OBJS} ${SHARE_OBJS}
 	@echo "$(GREEN)$@$(NOC)"
 
-bonus:		${BONUS_OBJS} ${LIBFT_OBJS} ${SHARE_OBJS}
+${BONUS_NAME}:		${BONUS_OBJS} ${LIBFT_OBJS} ${SHARE_OBJS}
 	@${CC} ${CFLAGS} -o ${BONUS_NAME} ${BONUS_OBJS} ${LIBFT_OBJS} ${SHARE_OBJS}
 	@echo "$(GREEN)${BONUS_NAME}$(NOC)"
 
@@ -118,7 +120,7 @@ help:
 	@echo "$(GREEN)Avaibles options:$(NOC)"
 	@echo "$(RED)==================$(NOC)"
 	@echo "$(RED)| $(YELLOW)make ${NAME} $(RED)|$(NOC)"
-	@echo "$(RED)| $(YELLOW)make bonus     $(RED)|$(NOC)"
+	@echo "$(RED)| $(YELLOW)make ${BONUS_NAME}   $(RED)|$(NOC)"
 	@echo "$(RED)| $(YELLOW)make norm      $(RED)|$(NOC)"
 	@echo "$(RED)| $(YELLOW)make tester    $(RED)|$(NOC)"
 	@echo "$(RED)| $(YELLOW)make clean     $(RED)|$(NOC)"
