@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:39:48 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/09 21:31:15 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 02:10:00 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,7 @@ void	check_args(int argc, char **argv)
 	while (*(args + i))
 	{
 		num = ft_atoi(*(args + i));
-		if (!is_num(*(args + i)))
-			error_exit("Error\n");
-		if (is_dupe(num, args, i))
+		if (!is_num(*(args + i)) || is_dupe(num, args, i))
 			error_exit("Error\n");
 		if (num < INT_MIN || num > INT_MAX)
 			error_exit("Error\n");

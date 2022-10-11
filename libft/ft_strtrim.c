@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 19:48:00 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/09 19:48:06 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 02:09:13 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	*(str + i) = '\0';
 	return (str);
 }
-
