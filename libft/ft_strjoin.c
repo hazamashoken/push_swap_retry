@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:46:55 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/12 11:10:52 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:42:52 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char	**ft_strpjoin(char **s1, char **s2)
 		*(str + k++) = ft_strdup(*(s1 + i++));
 	i = 0;
 	while (*(s2 + i) != 0)
-		*(str + k++) =  ft_strdup(*(s2 + i++));
+		*(str + k++) = ft_strdup(*(s2 + i++));
 	*(str + k) = 0;
 	return (str);
 }
