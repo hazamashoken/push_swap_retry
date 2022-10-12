@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 20:32:17 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/12 03:02:14 by tliangso         ###   ########.fr       */
+/*   Created: 2022/10/12 11:05:27 by tliangso          #+#    #+#             */
+/*   Updated: 2022/10/12 11:06:51 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include	"push_swap.h"
 
-# include <stddef.h>
-# include <unistd.h>
-# include <stdlib.h>
+char	*ft_strdup(const char *s)
+{
+	char	*str;
+	size_t	i;
 
-# define BUFFER_SIZE 6
-
-char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strjoin_free(char *s1, char *s2);
-
-#endif
+	i = 0;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (str == NULL)
+		return (NULL);
+	while (*(s + i) != '\0')
+	{
+		*(str + i) = *(s + i);
+		i++;
+	}
+	*(str + i) = '\0';
+	return (str);
+}

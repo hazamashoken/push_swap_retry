@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 19:48:00 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/12 02:09:13 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 09:36:23 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_charset(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	size_t	i;
 	size_t	start;

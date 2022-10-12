@@ -6,7 +6,7 @@
 #    By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 15:41:04 by tliangso          #+#    #+#              #
-#    Updated: 2022/10/09 21:06:11 by tliangso         ###   ########.fr        #
+#    Updated: 2022/10/12 11:07:17 by tliangso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ BONUS	=	checker.c utils_bonus.c \
 SHARE	=	swap.c rotate.c reverse_rotate.c push.c utils.c error.c index.c check_args.c
 
 LIBFT	=	ft_atoi.c lst_utils.c ft_strlen.c ft_split.c ft_isdigit.c ft_strjoin.c\
-			ft_putstr_fd.c get_next_line.c get_next_line_utils.c ft_strtrim.c
+			ft_putstr_fd.c get_next_line.c get_next_line_utils.c ft_strtrim.c ft_strdup.c
 
 ### PATH ###
 SRCS		= ${addprefix ${DIRSRC}, ${SRC}}

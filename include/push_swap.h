@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:32:27 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/09 20:53:57 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:07:02 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ typedef struct s_list
 //libft
 long	ft_atoi(const char *str);
 int		ft_isdigit(int c);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char *s, char c);
 size_t	ft_strlen(const char *s);
 int		ft_putstr_fd(char *str, int fd);
-char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char *s1, char *set);
 char	**ft_strpjoin(char **s1, char **s2);
 size_t	ft_strplen(char **s);
+char	**ft_strpjoin_free(char **s1, char **s2);
+char	*ft_strdup(const char *s);
 
 // lst_utils.c
 void	ft_lstadd_back(t_list **lst, t_list *node);

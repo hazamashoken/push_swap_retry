@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:39:48 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/12 02:10:00 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:39:08 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	**split_argv(char **argv)
 {
 	char	**res;
 	char	**tmp;
+	char	*tmp2;
 	int		i;
 
 	tmp = NULL;
@@ -53,13 +54,16 @@ char	**split_argv(char **argv)
 	i = 0;
 	while (*(argv + i))
 	{
-		*(argv + i) = ft_strtrim(*(argv + i), " ");
-		tmp = ft_split(*(argv + i), ' ');
+		tmp2 = ft_strtrim(*(argv + i), " ");
+		tmp = ft_split(tmp2, ' ');
 		if (res == NULL)
 			res = tmp;
 		else
-			res = ft_strpjoin(res, tmp);
+		{
+			res = ft_strpjoin_free(res, tmp);
+		}
 		i++;
+		free(tmp2);
 	}
 	return (res);
 }
@@ -90,7 +94,7 @@ void	check_args(int argc, char **argv)
 	else
 	{
 		if (check_blank(argv, argc))
-			error_exit("Error here\n");
+			error_exit("Error\n");
 		i = 1;
 		args = split_argv(argv);
 	}
@@ -103,6 +107,5 @@ void	check_args(int argc, char **argv)
 			error_exit("Error\n");
 		i++;
 	}
-	if (argc == 2)
-		free_split(args);
+	free_split(args);
 }

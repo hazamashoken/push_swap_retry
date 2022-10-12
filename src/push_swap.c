@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:32:08 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/09 21:12:57 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:24:48 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ static void	args_to_stack(t_list **stack, int argc, char **argv)
 		i++;
 	}
 	index_stack(stack);
-	if (argc == 2)
-		free_split(args);
+	free_split(args);
 }
 
 static void	sort_the_fucking_stack(t_list **a, t_list **b)

@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:50:54 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/04 11:51:35 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:09:01 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	*word(const char *str, char c)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**strings;
 	size_t	i;

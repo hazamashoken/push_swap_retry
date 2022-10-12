@@ -6,7 +6,7 @@
 /*   By: tliangso <earth78203@gmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:46:55 by tliangso          #+#    #+#             */
-/*   Updated: 2022/10/12 02:09:06 by tliangso         ###   ########.fr       */
+/*   Updated: 2022/10/12 11:10:52 by tliangso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@
 
 #include	"push_swap.h"
 
+static void	sfree_split(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (*(str + i) != 0)
+		free(*(str + i++));
+	free (str);
+}
+
 char	**ft_strpjoin(char **s1, char **s2)
 {
 	size_t	i;
@@ -40,10 +50,22 @@ char	**ft_strpjoin(char **s1, char **s2)
 		return (NULL);
 	i = 0;
 	while (*(s1 + i) != 0)
-		*(str + k++) = *(s1 + i++);
+		*(str + k++) = ft_strdup(*(s1 + i++));
 	i = 0;
 	while (*(s2 + i) != 0)
-		*(str + k++) = *(s2 + i++);
+		*(str + k++) =  ft_strdup(*(s2 + i++));
 	*(str + k) = 0;
+	return (str);
+}
+
+char	**ft_strpjoin_free(char **s1, char **s2)
+{
+	char	**str;
+
+	str = ft_strpjoin(s1, s2);
+	if (s1)
+		sfree_split(s1);
+	if (s2)
+		sfree_split(s2);
 	return (str);
 }
